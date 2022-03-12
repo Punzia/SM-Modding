@@ -1,2 +1,2 @@
-# SourceMod
+# SourceMod Plugins
 Source Modding
