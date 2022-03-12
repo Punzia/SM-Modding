@@ -1,26 +1,27 @@
 #pragma semicolon 1
 
-#define DEBUG
-
 #define PLUGIN_AUTHOR "Punzia"
-#define PLUGIN_VERSION "0.00"
+#define PLUGIN_VERSION "1.00"
 
 #include <sourcemod>
-#include <sdktools>
 
-#pragma newdecls required
 
 public Plugin myinfo = 
 {
-	name = "mayday",
+	name = "MayDay",
 	author = PLUGIN_AUTHOR,
 	description = "Prints message about May every 5 minute",
 	version = PLUGIN_VERSION,
 	url = "sm.punzia.com"
 };
 
-public void OnPluginStart()
+public void OnMapStart()
 {
-	PrintToChat("May is a sweetie!")
-	
+    CreateTimer(120.0, Timer_Callback, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
 }
+
+public Action Timer_Callback(Handle timer)
+{
+    PrintToChatAll("May is a sweetie! I love her a lot <3");
+    return Plugin_Continue;
+} 
