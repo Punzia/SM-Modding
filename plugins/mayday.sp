@@ -22,6 +22,6 @@ public void OnMapStart()
 
 public Action Timer_Callback(Handle timer)
 {
-    PrintToChatAll("May is a sweetie! I love her a lot <3");
-    return Plugin_Continue;
+	PrintToChatAll("\x04[Server]: \x03May \x01is a sweetie. I love her a lot! ♥");
+	return Plugin_Continue;
 } 
